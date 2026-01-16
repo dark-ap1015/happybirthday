@@ -26,6 +26,44 @@
 .cake-container {
   width: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.celebration-button {
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffb703, #fb8500);
+  color: #1a1a1a;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.photo-gallery {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.photo {
+  position: absolute;
+  width: 480px;
+  opacity: 0;
+  transform: scale(0.4);
+  animation: fireworkFade 1.2s ease-out forwards;
+}
+
+.photo-gallery.show .photo {
+  animation-play-state: running;
+}
+
+@keyframes fireworkFade {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
